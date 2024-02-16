@@ -20,11 +20,12 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: my-app
 
       - name: Build Expo app
-        run: npx expo export:web  
+        run: npx expo export:web 
 
       - name: Deploy to Vercel
         run: vercel --prod
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TOKEN: ${{ 'YB3Jgp90OzSt8l45QF2OiZP2' }}
