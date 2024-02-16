@@ -29,8 +29,6 @@ jobs:
         run: npm run build
         working-directory: my-app
 
-      
-
       - name: Deploy to Vercel
         run: vercel --prod --yes
         env:
