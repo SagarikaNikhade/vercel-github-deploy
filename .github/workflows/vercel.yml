@@ -18,12 +18,16 @@ jobs:
         with:
           node-version: 16
 
+      - name: Change Directory to sparkapp
+        run: cd my-app
+
       - name: Install dependencies
         run: npm install
         working-directory: my-app
 
       - name: Build Expo app
         run: npx expo export:web 
+        working-directory: my-app
 
       - name: Deploy to Vercel
         run: vercel --prod
