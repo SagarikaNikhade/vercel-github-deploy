@@ -29,4 +29,12 @@ jobs:
         run: npm run build
         working-directory: my-app
 
-     
+      - name: Load environment variables from .env file
+        run: |
+          npm install dotenv
+          npx dotenv -e .env
+
+      - name: Deploy to Vercel
+        run: vercel --prod --yes
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
