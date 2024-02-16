@@ -26,10 +26,10 @@ jobs:
         working-directory: my-app
 
       - name: Build Expo app
-        run: npm run build 
+        run: npm run build
         working-directory: my-app
 
       - name: Deploy to Vercel
-        run: vercel --prod
+        run: vercel --prod --yes
         env:
           VERCEL_TOKEN: ${{ 'YB3Jgp90OzSt8l45QF2OiZP2' }}
